@@ -71,9 +71,9 @@ RCT_EXPORT_METHOD(get:(RCTPromiseResolveBlock)resolve
       }
       sqlite3_close(db);
     }
-    resolve(kv);
     // THIS IS THE REDUX LOCALSTORAGE!!!!!
-    NSLog(@"REDUX %@", [kv valueForKey:@"redux"]);
+    // NSLog(@"REDUX %@", [kv valueForKey:@"redux"]);
+    resolve([kv valueForKey:@"redux"]);
   }else{
       resolve(@{});
   }
