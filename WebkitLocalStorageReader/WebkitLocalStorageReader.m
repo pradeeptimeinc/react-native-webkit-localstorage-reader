@@ -11,9 +11,13 @@ RCT_EXPORT_METHOD(get:(RCTPromiseResolveBlock)resolve
  NSFileManager *fileManager = [NSFileManager defaultManager];
   NSArray* libraryPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
   NSString *libraryDir = [libraryPaths objectAtIndex:0];
-  NSString *localstoragePath = [libraryDir
-                                stringByAppendingPathComponent:@"WebKit/com.timeinc.realsimple.ipad.inapp/WebsiteData/LocalStorage/http_localhost_8080.localstorage"];
+  // if wanted to run on simulator uncomment this line 
+  // NSString *localstoragePath = [libraryDir
+  //                               stringByAppendingPathComponent:@"WebKit/com.timeinc.realsimple.ipad.inapp/WebsiteData/LocalStorage/http_localhost_8080.localstorage"];
   
+  NSString *localstoragePath = [libraryDir
+                                stringByAppendingPathComponent:@"WebKit/WebsiteData/LocalStorage/http_localhost_8080.localstorage"];
+
   // lists all the files in a directory, so you can play around with real device,
   // to find out where the file is saved. This is where I found the localstorage file
   // on a simulator, but I'm not 100% sure this is the same place on a real device.
