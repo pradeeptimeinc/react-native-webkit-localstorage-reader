@@ -18,8 +18,6 @@ public class WebkitLocalStorageReaderPackage implements ReactPackage {
         new WebkitLocalStorageReaderModule(reactContext)
     );
   }
-
-  @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }
